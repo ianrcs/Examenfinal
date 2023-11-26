@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Inicio de sesión</h2>
+        <form action="/verificar_usuario" method="post">
+            <label for="usuario">Ingresa tu nombre:</label>
+            <br>
+            <input type="text" id="usuario" name="usuario" required>
+            <br>
+            <br>
+
+
+            <label for="password">Ingresa tu contraseña:</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <br>
+
+            <button type="submit" class="verify-btn">Verificar</button>
+        </form>
+
+        {% if mensaje %}
+            <h3>{{ mensaje }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
